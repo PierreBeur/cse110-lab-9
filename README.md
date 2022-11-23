@@ -1,1 +1,3 @@
-# Lab 9 - Starter
+# Lab 9
+
+Charles-Pierre Beurtheret
