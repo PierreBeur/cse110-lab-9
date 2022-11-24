@@ -43,9 +43,26 @@ for (const button of errorBtns) {
 function calculate(firstNum, operator, secondNum) {
   // Try/Catch
   try {
+    validateNumericInput(firstNum);
+    validateNumericInput(secondNum);
     return eval(`${firstNum} ${operator} ${secondNum}`);
   } catch (e) {
     console.error(e);
     return null;
+  }
+}
+
+// Throw
+function validateNumericInput(input) {
+  if (isNaN(input)) {
+    throw new ValidationError(`Invalid input: ${input}`);
+  }
+}
+
+// Custom Error
+class ValidationError extends Error {
+  constructor(message) {
+    super(message);
+    this.name = 'ValidationError';
   }
 }
