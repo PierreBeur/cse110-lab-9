@@ -41,5 +41,11 @@ for (const button of errorBtns) {
 }
 
 function calculate(firstNum, operator, secondNum) {
-  return eval(`${firstNum} ${operator} ${secondNum}`);
+  // Try/Catch
+  try {
+    return eval(`${firstNum} ${operator} ${secondNum}`);
+  } catch (e) {
+    console.error(e);
+    return null;
+  }
 }
