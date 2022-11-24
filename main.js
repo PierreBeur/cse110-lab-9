@@ -66,3 +66,8 @@ class ValidationError extends Error {
     this.name = 'ValidationError';
   }
 }
+
+// Global Error Handler
+window.addEventListener('error', e => {
+  console.warn(`Global Error Handler: ${e.message}`);
+});
