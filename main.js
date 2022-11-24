@@ -5,7 +5,7 @@ form.addEventListener('submit', e => {
   const firstNum = document.querySelector('#first-num').value;
   const secondNum = document.querySelector('#second-num').value;
   const operator = document.querySelector('#operator').value;
-  output.innerHTML = eval(`${firstNum} ${operator} ${secondNum}`);
+  output.innerHTML = calculate(firstNum, operator, secondNum);
 });
 
 // Buttons for Console Testing
@@ -38,4 +38,8 @@ const clickFunctions = {
 }
 for (const button of errorBtns) {
   button.addEventListener('click', clickFunctions[button.innerText]);
+}
+
+function calculate(firstNum, operator, secondNum) {
+  return eval(`${firstNum} ${operator} ${secondNum}`);
 }
